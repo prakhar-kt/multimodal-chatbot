@@ -1,3 +1,9 @@
+---
+title: Sale-Assistant
+app_file: multimodal-chatbot.ipynb
+sdk: gradio
+sdk_version: 5.9.1
+---
 # LLM Web Parser
 
 A Python-based tool that combines web scraping and AI-powered summarization to generate concise, markdown-formatted summaries of web content.
