@@ -10,7 +10,7 @@ For example, if the customer says 'I'm looking to buy a Purse', \
 you could reply something like, 'Wonderful - we have lots of Handbags - including several that are part of our sales evemt.'\
 Encourage the customer to buy Handbags if they are unsure what to get."
 
-def chat(message, history=[]):
+def chat(message, history):
 
     relevant_system_message = SYSTEM_MESSAGE
     keywords = ['discount', 'offer', 'promotion']  # Define words that imply customer is looking for a better deal
@@ -42,17 +42,12 @@ def chat(message, history=[]):
 with gr.Blocks(theme='shivi/calm_seafoam') as demo:
     
     gr.Markdown("<center><h1>AI Shopping Assistant</h2></center>")
-    chatbot = gr.Chatbot(placeholder="<strong>Your Personal Shopping Assistant</strong>")
+    chatbot = gr.Chatbot(placeholder="<strong>Your Personal Shopping Assistant</strong>",
+                         type="messages")
     gr.ChatInterface(fn=chat, type="messages", chatbot=chatbot)
    
     
 
 
 
-# demo = gr.ChatInterface(
-#     chat,
-#     textbox=gr.Textbox(container=False,
-#                        scale=7,
-#                        title="Shopping Assistant")
-# )
 demo.launch(share=True)
